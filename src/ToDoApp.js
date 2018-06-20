@@ -12,6 +12,12 @@ export default class ToDoApp extends Component {
     }
 
     componentDidMount() {
+
+        this.refreshState();
+
+    }
+
+    refreshState() {
         fetch('http://localhost:6060/api/todolist', {
             method: 'GET',
             headers: {
@@ -32,8 +38,6 @@ export default class ToDoApp extends Component {
 
 
             });
-
-
     }
 
     onChange = (event) => {
@@ -57,19 +61,9 @@ export default class ToDoApp extends Component {
             })
         })
             .then(() => {
-                return fetch(`http://localhost:6060/api/todolist`, {
-                    method: 'GET',
-                    headers: {
-                        'content-type': 'application/json',
-                    }
-                }).then((res) => res.json())
-            })
-            .then((data) => {
-                this.setState({
-                    items: data
-                    // items: data.list.items.map(({description}) => description)
-                })
+               this.refreshState();
             });
+
     }
 
     render() {

@@ -10,3 +10,9 @@ npm start
 
 
 ```
+
+
+
+https://itnext.io/learning-to-write-react-tests-on-example-of-react-tic-tac-toe-app-acf7ae2b94b8
+https://www.vinta.com.br/blog/2017/unit-testing-react-components-jest/
+https://reactjs.org/tutorial/tutorial.html
